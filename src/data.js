@@ -46,7 +46,7 @@ export const projects = [
         desc: "Smart handling system for local shops. Manages daily customer transactions by scanning unique IDs and sends email receipts automatically.",
         tags: [".NET Core", "MVC", "PostgreSQL", "C#"],
         color: "rgba(236, 72, 153, 0.2)",
-        liveLink: "", // Add live link if available, otherwise it will just show Source
+        liveLink: "https://ledgerlink-app.onrender.com", // Add live link if available, otherwise it will just show Source
         sourceLink: "https://github.com/omk44/LedgerLink",
         imageUrl: "/LedgerLink.png" // Add your image to public/ folder and reference it here, e.g. "/ledgerlink.png"
     },

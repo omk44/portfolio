@@ -21,15 +21,6 @@ export const skills = [
     // Add new skills here
 ];
 
-export const experience = [
-    {
-        role: "Intern Software Developer",
-        company: "Arishti Dev",
-        year: "May,2025 - January,2026",
-        desc: "Leading the development of next-gen web applications using React & modern JS ecosystems."
-    }
-];
-
 export const projects = [
     {
         title: "Aegis (CVE-Based Host Vulnerability Scanner)",

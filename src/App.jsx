@@ -18,7 +18,7 @@ import {
   Target
 } from 'lucide-react';
 
-import { personalInfo, skills, experience, projects, certificates, education, achievements, hobbies, problemSolving } from './data.js';
+import { personalInfo, skills, projects, certificates, education, achievements, hobbies, problemSolving } from './data.js';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -182,24 +182,8 @@ export default function App() {
 
             <div className="resume-grid">
               <div className="glass-panel" style={{ padding: '32px' }}>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
-                  <Briefcase size={24} color="var(--accent-2)" />
-                  Experience
-                </h3>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-                  {experience.map((job, i) => (
-                    <div key={i} style={{ borderLeft: '2px solid var(--glass-border)', paddingLeft: '24px', position: 'relative' }}>
-                      <div style={{ position: 'absolute', left: '-6px', top: '4px', width: '10px', height: '10px', borderRadius: '50%', background: 'var(--accent-1)' }}></div>
-                      <h4 style={{ fontSize: '1.2rem', fontWeight: 600 }}>{job.role}</h4>
-                      <div style={{ color: 'var(--accent-3)', fontSize: '0.9rem', marginBottom: '8px' }}>{job.company} | {job.year}</div>
-                      <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>{job.desc}</p>
-                    </div>
-                  ))}
-                </div>
-
                 {/* EDUCATION */}
-                <h3 style={{ fontSize: '1.5rem', marginTop: '48px', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <GraduationCap size={24} color="var(--accent-2)" />
                   Education
                 </h3>

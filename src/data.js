@@ -46,7 +46,7 @@ export const projects = [
         desc: "Scalable MERN-stack booking system designed for high-traffic multi-specialist and government hospitals. Features real-time notifications, a comprehensive admin dashboard for managing staff and appointments, and dedicated doctor portals.",
         tags: ["MERN", "MongoDB", "Express.js", "React", "Node.js", "Real-Time"],
         color: "rgba(139, 92, 246, 0.2)",
-        liveLink: "https://opti-doc.vercel.app",
+        liveLink: "https://opti-doc-n5wb.vercel.app",
         sourceLink: "https://github.com/omk44/OptiDoc", // Add your GitHub repository link here
         imageUrl: "/OptiDoc.png" // Add your image to public/ folder and reference it here, e.g. "/optidoc.png"
     }

@@ -15,10 +15,13 @@ import {
   GraduationCap,
   Trophy,
   Heart,
-  Target
+  Target,
+  FileText,
+  BookOpen
 } from 'lucide-react';
 
-import { personalInfo, skills, projects, certificates, education, achievements, hobbies, problemSolving } from './data.js';
+import { personalInfo, skills, projects, research, certificates, education, experiences, achievements, hobbies, problemSolving } from './data.js';
+import LiveModelWallpaper from './LiveModelWallpaper.jsx';
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 50 },
@@ -53,7 +56,7 @@ export default function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'resume', 'projects', 'certificates'];
+      const sections = ['home', 'resume', 'research', 'projects', 'certificates'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -85,9 +88,10 @@ export default function App() {
   return (
     <>
       <div className="bg-mesh"></div>
+      <LiveModelWallpaper />
 
       <nav className="glass-panel">
-        {['home', 'resume', 'projects', 'certificates'].map((item) => (
+        {['home', 'resume', 'research', 'projects', 'certificates'].map((item) => (
           <a
             key={item}
             href={`#${item}`}
@@ -182,6 +186,53 @@ export default function App() {
 
             <div className="resume-grid">
               <div className="glass-panel" style={{ padding: '32px' }}>
+                {/* EXPERIENCE */}
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <Briefcase size={24} color="var(--accent-2)" />
+                  Experience
+                </h3>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '32px', marginBottom: '40px' }}>
+                  {experiences.map((exp, i) => (
+                    <div key={i} style={{ borderLeft: '2px solid var(--glass-border)', paddingLeft: '24px', position: 'relative' }}>
+                      <div style={{ position: 'absolute', left: '-6px', top: '4px', width: '10px', height: '10px', borderRadius: '50%', background: 'var(--accent-1)' }}></div>
+                      <h4 style={{ fontSize: '1.2rem', fontWeight: 600 }}>{exp.role}</h4>
+                      <div style={{ color: 'var(--accent-3)', fontSize: '0.9rem', marginBottom: '8px' }}>
+                        {exp.company} | {exp.duration}
+                      </div>
+                      
+                      <ul style={{ paddingLeft: '16px', color: 'var(--text-secondary)', fontSize: '0.9rem', display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '12px', listStyleType: 'disc' }}>
+                        {exp.points.map((pt, idx) => (
+                          <li key={idx} style={{ lineHeight: 1.4 }}>{pt}</li>
+                        ))}
+                      </ul>
+                      
+                      {exp.certificateUrl && (
+                        <a 
+                          href={exp.certificateUrl} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          style={{ 
+                            fontSize: '0.8rem', 
+                            textDecoration: 'none', 
+                            display: 'inline-flex', 
+                            alignItems: 'center', 
+                            gap: '6px', 
+                            padding: '6px 12px', 
+                            borderRadius: '8px', 
+                            background: 'rgba(99, 102, 241, 0.1)', 
+                            color: '#a5b4fc', 
+                            border: '1px solid rgba(99, 102, 241, 0.2)',
+                            marginTop: '4px'
+                          }}
+                        >
+                          View Certificate <ExternalLink size={12} />
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
                 {/* EDUCATION */}
                 <h3 style={{ fontSize: '1.5rem', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <GraduationCap size={24} color="var(--accent-2)" />
@@ -269,6 +320,85 @@ export default function App() {
                   </div>
                 </div>
               </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* PUBLICATIONS & RESEARCH SECTION */}
+        <section id="research" className="section container">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={sectionVariants}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '48px', justifyContent: 'center' }}>
+              <BookOpen size={32} color="var(--accent-1)" />
+              <h2 className="section-title" style={{ marginBottom: 0 }}>Publications & Research</h2>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              {research.map((pub, i) => (
+                <div key={i} className="glass-panel" style={{ padding: '32px', position: 'relative', overflow: 'hidden' }}>
+                  {/* Subtle Background Glow for this specific paper */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '-50px',
+                    right: '-50px',
+                    width: '200px',
+                    height: '200px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%)',
+                    zIndex: 0,
+                    pointerEvents: 'none'
+                  }} />
+
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '24px', position: 'relative', zIndex: 1 }}>
+                    <div style={{ flex: '1 1 500px' }}>
+                      <span className="badge" style={{ marginBottom: '16px', background: 'rgba(236, 72, 153, 0.1)', color: '#fbcfe8', borderColor: 'rgba(236, 72, 153, 0.2)' }}>
+                        {pub.status}
+                      </span>
+                      <h3 style={{ fontSize: '1.6rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.3 }}>
+                        {pub.title}
+                      </h3>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: '1rem', marginBottom: '20px' }}>
+                        {pub.description}
+                      </p>
+                      
+                      <ul style={{ paddingLeft: '20px', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                        {pub.points.map((pt, idx) => (
+                          <li key={idx} style={{ fontSize: '0.95rem', lineHeight: 1.5 }}>
+                            {pt}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', alignItems: 'stretch', minWidth: '200px' }}>
+                      {pub.preprintUrl && (
+                        <a 
+                          href={pub.preprintUrl} 
+                          target="_blank" 
+                          rel="noreferrer" 
+                          className="btn btn-primary"
+                          style={{ textDecoration: 'none', gap: '10px', justifyContent: 'center' }}
+                        >
+                          <FileText size={18} />
+                          Preprint PDF (Zenodo)
+                        </a>
+                      )}
+                      
+                      <button 
+                        className="btn btn-secondary" 
+                        onClick={() => scrollTo('projects')}
+                        style={{ justifyContent: 'center' }}
+                      >
+                        View Project Code
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </section>
@@ -370,8 +500,8 @@ export default function App() {
               <a href={personalInfo.github} style={{ color: 'var(--text-secondary)' }}><Github size={24} /></a>
               <a href={personalInfo.linkedin} style={{ color: 'var(--text-secondary)' }}><Linkedin size={24} /></a>
             </div>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
-              © {new Date().getFullYear()} {personalInfo.name}. Designed & Built with React & Framer Motion.
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', letterSpacing: '0.02em' }}>
+              © {new Date().getFullYear()} Om Kapadiya. Driven by curiosity, secured by code.
             </p>
           </div>
         </footer>

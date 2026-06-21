@@ -6,7 +6,7 @@ export const personalInfo = {
     name: "Om",
     title: "Software Engineer | ML & .NET Enthusiast",
     subtitle: "Crafting digital experiences for the future.",
-    description: "I am a 6th-semester student at Dharmsinh Desai University on a forward-looking path to becoming a top-tier software engineer. I specialize in Python and full-stack .NET Core development (WebAPI), building robust, clean systems. I have a deep passion for Machine Learning, and while my core focus is software development, I also have a keen interest in System Design and DevOps.",
+    description: "I am a 7th-semester student at Dharmsinh Desai University on a forward-looking path to becoming a top-tier software engineer. I specialize in Python and full-stack .NET Core development (WebAPI), building robust, clean systems. I have a deep passion for Machine Learning, and while my core focus is software development, I also have a keen interest in System Design and DevOps.",
     email: "omkapadiya34@gmail.com",
     github: "https://github.com/omk44",
     linkedin: "https://www.linkedin.com/in/om-kapadiya-58423b287/",
@@ -17,7 +17,7 @@ export const personalInfo = {
 export const skills = [
     'JavaScript (ES6+)', 'React.js', 'Next.js', 'Node.js',
     'SqLite', 'PostgreSQL', 'Docker', '.NET Core', '.net framework', 'C#', 'java', 'Django', 'Python',
-    'Git', 'GitLab',
+    'Git/Github', 'GitLab',
     // Add new skills here
 ];
 
@@ -52,6 +52,20 @@ export const projects = [
     }
 ];
 
+export const research = [
+    {
+        title: "Aegis -- An Integrated System for Automated Vulnerability Scanning",
+        status: "In Progress (Preprint Available)",
+        preprintUrl: "https://share.google/J1qWfh0M01Yl1FIiA",
+        description: "Drafting a comprehensive research paper detailing the architecture and implementation of the Aegis project.",
+        points: [
+            "Currently drafting a comprehensive research paper detailing the architecture and implementation of the Aegis project, specifically focusing on Behavioral Anomaly Detection using Isolation Forest.",
+            "Exploring the effectiveness of deterministic CVSS data mapping and unsupervised machine learning for network anomaly detection."
+        ],
+        icon: "📄"
+    }
+];
+
 export const certificates = [
     {
         name: "Programming in Java",
@@ -77,19 +91,33 @@ export const certificates = [
     }
 ];
 
+export const experiences = [
+    {
+        role: "Software Developer Intern",
+        company: "Arishti DEV",
+        duration: "May 2025 -- Dec 2025 (8 Months)",
+        certificateUrl: "/arishti_intern.pdf",
+        points: [
+            "Engineered the interactive frontend and core logic for Advance Cyber Kiosk Plus, a digital forensic solution used by NFSU to scan mobile devices and USB storage for cyber threats.",
+            "Developed the kiosk application using Qt Framework (QML & C++) and architected real-time, bi-directional client-server communication with a .NET backend utilizing WebSockets.",
+            "Facilitated automated threat analysis modules to identify malicious applications and generate secure, tamper-proof forensic reports for institutional use."
+        ]
+    }
+];
+
 export const education = [
     {
         degree: "B.Tech in Computer Engineering",
         institution: "Dharmsinh Desai University",
-        duration: "Class of 2027 (Currently in 6th Semester)",
-        details: "Current CGPA: 7.98. Focusing on software development, full-stack technologies, and machine learning."
+        duration: "Class of 2027 (Currently in 7th Semester)",
+        details: "Current CGPA:8.02. Focusing on software development, full-stack technologies, and machine learning."
     }
 ];
 
 export const achievements = [
     {
         title: "Competitive Programming",
-        platform: "LeetCode & Others",
+        platform: "LeetCode & Codechef",
         desc: "Regularly solving algorithmic problems to strengthen data structures and logical reasoning capabilities.",
         icon: "💻"
     }
@@ -99,10 +127,15 @@ export const problemSolving = [
     {
         platform: "LeetCode",
         link: "https://leetcode.com/u/omk34/", // Add your exact LeetCode profile link here
-        solved: "150+", // Update with your exact solved count
+        solved: "190+", // Update with your exact solved count
         icon: "💻"
+    },
+    {
+        platform: "CodeChef",
+        link: "https://www.codechef.com/users/omkapadiya4",
+        solved: "1513 Rating (2★)",
+        icon: "⚔️"
     }
-
 ];
 
 export const hobbies = [
@@ -111,5 +144,5 @@ export const hobbies = [
     { name: "Reading", icon: "📚" },
     { name: "Trekking", icon: "🥾" },
     { name: "Exploring ML Models", icon: "🤖" },
-    { name: "System Design", icon: "�️" }
+    { name: "System Design", icon: "⚙️" }
 ];
